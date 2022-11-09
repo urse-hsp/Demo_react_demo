@@ -4,13 +4,14 @@ import UseLayoutEffect from './pages/useLayoutEffect'
 import UseReducer from './pages/useReducer'
 import UseTransition from './pages/useTransition'
 import UseDeferredValue from './pages/useDeferredValue'
+import UseId from './pages/useId'
 
 import './App.css'
 
 function App() {
   return (
     <div className='App'>
-      <Tabs defaultActiveKey='useDeferredValue'>
+      <Tabs defaultActiveKey='UseId'>
         <Tabs.TabPane tab='useLayoutEffect' key='useLayoutEffect'>
           <UseLayoutEffect />
         </Tabs.TabPane>
@@ -22,6 +23,9 @@ function App() {
         </Tabs.TabPane>
         <Tabs.TabPane tab='useDeferredValue' key='useDeferredValue'>
           <UseDeferredValue />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='UseId' key='UseId'>
+          <UseId />
         </Tabs.TabPane>
       </Tabs>
     </div>

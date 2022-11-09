@@ -1,5 +1,7 @@
 import React, { useDeferredValue, useEffect, useState } from 'react'
 import { useDebounce } from 'ahooks'
+ // useDeferredValue 拖迟到紧急更新之后，如果是紧急更新先返回之前的值，在完成后在渲染值
+
 
 // interface UseDeferredValueType {
 //   isVisible?: boolean
