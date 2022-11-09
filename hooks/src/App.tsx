@@ -2,21 +2,26 @@ import React from 'react'
 import { Tabs } from 'antd'
 import UseLayoutEffect from './pages/useLayoutEffect'
 import UseReducer from './pages/useReducer'
+import UseTransition from './pages/useTransition'
+import UseDeferredValue from './pages/useDeferredValue'
 
 import './App.css'
 
 function App() {
   return (
     <div className='App'>
-      <Tabs defaultActiveKey='useReducer'>
+      <Tabs defaultActiveKey='useDeferredValue'>
         <Tabs.TabPane tab='useLayoutEffect' key='useLayoutEffect'>
           <UseLayoutEffect />
         </Tabs.TabPane>
         <Tabs.TabPane tab='useReducer' key='useReducer'>
           <UseReducer />
         </Tabs.TabPane>
-        <Tabs.TabPane tab='Tab 3' key='3'>
-          Content of Tab Pane 3
+        <Tabs.TabPane tab='useTransition' key='useTransition'>
+          <UseTransition />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='useDeferredValue' key='useDeferredValue'>
+          <UseDeferredValue />
         </Tabs.TabPane>
       </Tabs>
     </div>
