@@ -6,12 +6,12 @@ interface UseLayoutEffectType {
 }
 
 const UseLayoutEffect: React.FC<UseLayoutEffectType> = (props) => {
-  // 页面渲染后执行
+  // 页面更新后执行 插入DOM树中
   useEffect(() => {
     console.log('useEffect')
   }, [])
 
-  // 页面渲染前执行
+  // 页面 插入DOM树中 渲染前执行
   useLayoutEffect(() => {
     console.log('useLayoutEffect')
   }, [])
