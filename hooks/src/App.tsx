@@ -7,14 +7,14 @@ import UseId from './pages/useId'
 import ReactMemo from './pages/React.memo'
 import UseCallback from './pages/useCallback'
 import UseMemo from './pages/useMemo'
-// import UseContext from './pages/useContext'
+import UseContext from './pages/useContext'
 
 import './App.css'
 
 function App() {
   return (
     <div className='App'>
-      <Tabs defaultActiveKey='UseMemo'>
+      <Tabs defaultActiveKey='UseContext'>
         <Tabs.TabPane tab='useLayoutEffect' key='useLayoutEffect'>
           <UseLayoutEffect />
         </Tabs.TabPane>
@@ -38,6 +38,9 @@ function App() {
         </Tabs.TabPane>
         <Tabs.TabPane tab='UseMemo' key='UseMemo'>
           <UseMemo />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='UseContext' key='UseContext'>
+          <UseContext />
         </Tabs.TabPane>
       </Tabs>
     </div>
