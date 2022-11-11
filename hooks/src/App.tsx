@@ -6,7 +6,7 @@ import UseDeferredValue from './pages/useDeferredValue'
 import UseId from './pages/useId'
 import ReactMemo from './pages/React.memo'
 import UseCallback from './pages/useCallback'
-// import UseMemo from './pages/useMemo'
+import UseMemo from './pages/useMemo'
 // import UseContext from './pages/useContext'
 
 import './App.css'
@@ -14,7 +14,7 @@ import './App.css'
 function App() {
   return (
     <div className='App'>
-      <Tabs defaultActiveKey='UseCallback'>
+      <Tabs defaultActiveKey='UseMemo'>
         <Tabs.TabPane tab='useLayoutEffect' key='useLayoutEffect'>
           <UseLayoutEffect />
         </Tabs.TabPane>
@@ -33,9 +33,11 @@ function App() {
         <Tabs.TabPane tab='ReactMemo' key='ReactMemo'>
           <ReactMemo />
         </Tabs.TabPane>
-
         <Tabs.TabPane tab='UseCallback' key='UseCallback'>
           <UseCallback />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='UseMemo' key='UseMemo'>
+          <UseMemo />
         </Tabs.TabPane>
       </Tabs>
     </div>

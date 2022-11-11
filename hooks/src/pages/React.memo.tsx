@@ -57,5 +57,3 @@ const ReactMemo: React.FC<ReactMemoType> = (props) => {
   )
 }
 export default ReactMemo
-
-// CONST children
