@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+“SWR” 这个名字来自于 stale-while-revalidate：一种由 HTTP RFC 5861 推广的 HTTP 缓存失效策略。这种策略首先从缓存中返回数据（过期的），同时发送 fetch 请求（重新验证），最后得到最新数据。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 使用 SWR，组件将会不断地、自动获得最新数据流。UI 也会一直保持快速响应。
 
-## Available Scripts
+特性
+仅需一行代码，你就可以简化项目中数据请求的逻辑，并立即拥有以下这些不可思议的特性：
 
-In the project directory, you can run:
+极速、轻量、可重用的 数据请求
+内置 缓存 和重复请求去除
+实时 体验
+传输和协议不可知
+支持 SSR / ISR / SSG
+支持 TypeScript
+React Native
+SWR 涵盖了性能，正确性和稳定性的各个方面，以帮你建立更好的体验：
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+快速页面导航
+间隔轮询
+数据依赖
+聚焦时重新验证
+网络恢复时重新验证
+本地缓存更新 (Optimistic UI)
+智能错误重试
+分页和滚动位置恢复
+React Suspense
