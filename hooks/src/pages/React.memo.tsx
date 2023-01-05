@@ -44,8 +44,9 @@ const ReactMemo: React.FC<ReactMemoType> = (props) => {
       <span
         onClick={() => {
           // setName(name + 1)
-          // setList(list.push(6)); //这样是不会被memo检测到的，是无法触发memo更新的
-          setList([...list, 6]) //这样才可以，创建一个新数组，再在里面解构旧数组，往后面追加 1
+          const newList = list
+          setList(newList.push(6)) //这样是不会被memo检测到的，是无法触发memo更新的
+          // setList([...list, list.length + 1]) //这样才可以，创建一个新数组，再在里面解构旧数组，往后面追加 1
           //这样,就等于返回了一个新的数组，栈中的地址就会改变，memo就可以检测到并触发更新
         }}>
         {name}
