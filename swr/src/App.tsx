@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import logo from './logo.svg'
 import './App.css'
 import useSWR from 'swr'
@@ -9,11 +9,11 @@ function App() {
   //   'https://defiprime.com/defiprime.tokenlist.json',
   //   fetcher
   // )
-  const { data, error, loading } = useUser(
-    'https://defiprime.com/defiprime.tokenlist.json'
+  const { data, error, loading,mutate } = useUser(
+    'https://defiprime.com/defiprime.tokenlist.json',
   )
-  console.log(data, 'data')
 
+  
   if (error) return <div>failed to load</div>
   if (loading) return <div>loading...</div>
   return (

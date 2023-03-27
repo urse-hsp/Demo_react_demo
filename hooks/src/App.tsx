@@ -8,6 +8,7 @@ import ReactMemo from './pages/React.memo'
 import UseCallback from './pages/useCallback'
 import UseMemo from './pages/useMemo'
 import UseContext from './pages/useContext'
+import UnstatedNext from './pages/unstated-next'
 
 import './App.css'
 
@@ -41,6 +42,9 @@ function App() {
         </Tabs.TabPane>
         <Tabs.TabPane tab='UseContext' key='UseContext'>
           <UseContext />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='unstatedNext' key='unstatedNext'>
+          <UnstatedNext />
         </Tabs.TabPane>
       </Tabs>
     </div>

@@ -23,3 +23,43 @@ SWR 涵盖了性能，正确性和稳定性的各个方面，以帮你建立更�
 智能错误重试
 分页和滚动位置恢复
 React Suspense
+
+# 传参方式
+
+单个参数：useSWR(`${id}`, fetcher) **_直接 data
+数组：useSWR([`${id}`,{name:1}], fetcher) _**取值 data[0]
+对象：useSWR({ url: `${id}`, args: 1 }, fetcher) \_\_\_取值 data.url
+
+# 数据更改 & 重新验证
+
+SWR 提供了 mutate 和 useSWRMutation 两个 API 用于更改远程数据及相关缓存。
+全局数据更改
+推荐使用 useSWRConfig hook 获取全局 mutator：
+
+import { useSWRConfig } from "swr"
+function App() {
+const { mutate } = useSWRConfig()
+mutate(key, data, options)
+}
+
+import { mutate } from "swr"
+function App() {
+mutate(key, data, options)
+}
+
+绑定数据更改
+
+绑定数据更改可以更便捷的更改当前 key 数据，它的 key 与传递给 useSWR 的 key 相绑定，并接收 data 作为第一个参数。
+它在功能上等同于上文提到的的全局 mutate 函数，但它不需要传入 key 参数：
+const { data, mutate } = useSWR('/api/user', fetcher)
+
+# mutate(key) 一个参数通知所有拥有这个 key SWR 重新验证 。带 data：立即更新并重新验证本地数据（重新请求）。当使用 useSWR 的 mutate 时，key 并不是必须的，因为它已经预先绑定了。
+
+1. mutate useSWRMutation api 输入指定的 key 可以修改当前接口请求，
+1. 全局数据更改 API 可以更改任何 key 的数据，而绑定数据更改只能更改对应 SWR hook 的数据。
+1.
+
+# useSWRMutation 远程数据更改的 hook。远程数据更改只能手动触发，而不像 useSWR 那样会自动触发。
+
+import useSWRMutation from 'swr/mutation'
+const { trigger } = useSWRMutation('/api/user', updateUser, options?)
