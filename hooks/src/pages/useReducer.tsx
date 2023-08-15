@@ -24,6 +24,9 @@ function reducer(state: any, action: any) {
   }
 }
 
+// 第一个参数 reducer 是函数 (state, action) => newState，接受当前的 state 和操作行为。
+// 第二个参数 initialArg 是状态初始值。
+// 第三个参数 init 是懒惰初始化函数。
 const UseReducer: React.FC<UseReducerType> = (props) => {
   const { initialCount = 1 } = props
   // 第一个参数：reducer。
@@ -35,9 +38,7 @@ const UseReducer: React.FC<UseReducerType> = (props) => {
   return (
     <div>
       UseReducer Count: {state.count}
-      <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>
-        Reset
-      </button>
+      <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</button>
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
     </div>
